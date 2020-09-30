@@ -28,6 +28,7 @@ this.getValue().subscribe((value) => {
     }
     
     getValue(): Observable<number> {
+      console.log(this.count);
       return this.count.asObservable();
     }
   
