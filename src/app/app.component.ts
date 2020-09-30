@@ -11,7 +11,7 @@ export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   
   constructor() {
-this.service.getValue().subscribe((value) => {
+this.getValue().subscribe((value) => {
       this.count = value;
     });
   }
