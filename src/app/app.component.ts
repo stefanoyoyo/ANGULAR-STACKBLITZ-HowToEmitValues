@@ -5,7 +5,7 @@ import { Component, VERSION } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent implements onChanges  {
+export class AppComponent   {
   name = 'Angular ' + VERSION.major;
   
   count: number = 0;
@@ -14,9 +14,7 @@ export class AppComponent implements onChanges  {
     ++ this.count;
   }
   
-  onChanges() {
-    
-  }
+ 
   
   
 }
