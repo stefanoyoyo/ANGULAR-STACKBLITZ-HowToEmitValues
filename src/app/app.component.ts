@@ -1,4 +1,6 @@
 import { Component, VERSION } from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+
 
 @Component({
   selector: 'my-app',
@@ -8,11 +10,26 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
   
-  count: number = 0;
+  constructor() {
+this.service.getValue().subscribe((value) => {
+      this.count = value;
+    });
+  }
+  
+  count: BehaviourSubject<number> = new BehaviourSubject(0);
   
   countInc(){
     ++ this.count;
   }
+  
+  /** Mehtods to monitor variavle changes */
+    setValue(newValue): void {
+      this.count.next(newValue);
+    }
+    
+    getValue(): Observable<number> {
+      return this.count.asObservable();
+    }
   
   
 }
