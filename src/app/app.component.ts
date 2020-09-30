@@ -19,7 +19,7 @@ this.getValue().subscribe((value) => {
   count: BehaviourSubject<number> = new BehaviourSubject(0);
   
   countInc(){
-    ++ this.setValue(++this.count)
+    this.setValue(++this.count)
   }
   
   /** Mehtods to monitor variavle changes */
